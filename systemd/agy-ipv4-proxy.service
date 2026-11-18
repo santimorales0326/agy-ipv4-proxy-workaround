@@ -1,0 +1,12 @@
+[Unit]
+Description=Local IPv4-only HTTPS CONNECT proxy for agy
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/env python3 %h/.local/share/agy-ipv4-proxy/proxy.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target
